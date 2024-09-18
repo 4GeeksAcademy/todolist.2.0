@@ -20,12 +20,13 @@ const TodoList = () => {
   } 
 
  // Función para agregar un nuevo input cuando presionas "Enter"
- const handleKeyDown = (e, index) => {
-  if (e.key === 'Enter' && tasks[index].trim() !== '') {
+ const handleKeyDown = (e) => {
+  if (e.key === 'Enter' && name.trim() !== '') {  // Solo si hay texto en el input
     e.preventDefault();
-    setTasks([...tasks, '']);
+    setTasks([...tasks, name]);  // Agrega la tarea actual
+    setName('');  // Limpia el input
   }
-}
+};
 
 
   const addTask = () => {
@@ -39,7 +40,14 @@ const TodoList = () => {
     <div className='container'>
       <div className='row'>
         <div className="col">
-      <input type='text' value={name} onChange={handleChange} placeholder="Escribe una tarea" className="form-control"/>
+      <input type='text' 
+      value={name} 
+      onChange={handleChange}
+      onKeyDown={handleKeyDown} 
+      placeholder="Escribe una tarea" 
+      className="form-control"
+      />
+
       <button onClick={addTask} className="btn btn-primary m-2">Agregar</button>
       
       </div>
@@ -52,7 +60,6 @@ const TodoList = () => {
               type="text" 
               value={task} 
               onChange={(e) => changeInput(e, index)} 
-              onKeyDown={(e) => handleKeyDown(e, index)} // Detectar Enter
               className="form-control"
               placeholder="Escribe una tarea"
             />
