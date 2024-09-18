@@ -40,7 +40,7 @@ const TodoList = () => {
   };
 
   return (
-    <div className="container d-flex justify-counter-center">
+    <div className="container d-flex flex-column align-items-center mt-5">
       <div className="row">
         <div className="col">
           <input
@@ -55,9 +55,9 @@ const TodoList = () => {
          
         </div>
       </div>
-      <ul>
+      <ul className="list-group mt-4">
         {tasks.map((task, index) => (
-          <li key={index}>
+          <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
             <input
               type="text"
               value={task}
@@ -69,7 +69,7 @@ const TodoList = () => {
               onClick={() => deleteTask(index)}
               className="btn btn-danger m-2"
             >
-              Eliminar
+              x
             </button>
           </li>
         ))}
