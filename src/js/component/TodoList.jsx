@@ -27,13 +27,6 @@ const TodoList = () => {
     }
   };
 
-  const addTask = () => {
-    if (name.trim() !== "") {
-      setTasks([...tasks, name]);
-      setName("");
-    }
-  };
-
   const deleteTask = (index) => {
     const newTasks = tasks.filter((_, i) => i !== index);
     setTasks(newTasks);
@@ -55,7 +48,7 @@ const TodoList = () => {
          
         </div>
       </div>
-      <ul className="list-group mt-4">
+      <ul className="list-group">
         {tasks.map((task, index) => (
           <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
             <input
@@ -67,14 +60,16 @@ const TodoList = () => {
             />
             <button
               onClick={() => deleteTask(index)}
-              className="btn btn-danger m-2"
+              className="btn btn-white m-2"
             >
               x
             </button>
           </li>
         ))}
       </ul>
+      <div>{tasks.length}</div>
     </div>
+    
   );
 };
 
