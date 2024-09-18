@@ -1,12 +1,27 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: gray;
+  }
+  
+  .container {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(227, 222, 222);
+    box-shadow: -5px 5px #d1d9d9;
+    border-radius: 5px;
 
-/* 
-
-    You can write your own styles here...
+  }
+  
+  .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+  }
+  
+   

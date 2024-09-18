@@ -40,7 +40,7 @@ const TodoList = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container d-flex justify-counter-center">
       <div className="row">
         <div className="col">
           <input
@@ -52,9 +52,7 @@ const TodoList = () => {
             className="form-control"
           />
 
-          <button onClick={addTask} className="btn btn-primary m-2">
-            Agregar
-          </button>
+         
         </div>
       </div>
       <ul>
