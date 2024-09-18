@@ -36,6 +36,11 @@ const TodoList = () => {
     }
   }
 
+  const deleteTask = (index) => {
+    const newTasks = tasks.filter((_, i) => i !== index);
+    setTasks(newTasks);
+  }
+
   return (
     <div className='container'>
       <div className='row'>
@@ -63,6 +68,9 @@ const TodoList = () => {
               className="form-control"
               placeholder="Escribe una tarea"
             />
+            <button 
+            onClick = {() => deleteTask(index)}
+            className="btn btn-danger m-2">Eliminar</button>
           </li>
         ))}
       </ul>
