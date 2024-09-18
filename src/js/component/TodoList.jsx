@@ -1,82 +1,83 @@
 import React, { useState } from "react";
 
-
 const TodoList = () => {
-  
-  const [name, setName] = useState('')
-  const [tasks, setTasks] = useState([])
+  const [name, setName] = useState("");
+  const [tasks, setTasks] = useState([]);
 
   // Función para manejar el input inicial
   const handleChange = (e) => {
-    setName(e.target.value)
-  }
+    setName(e.target.value);
+  };
 
-//funcion para manejar la entrada del input 
-  const changeInput = (e,index) => {
+  //funcion para manejar la entrada del input
+  const changeInput = (e, index) => {
     // setName(e.target.value)
     const newTasks = [...tasks];
     newTasks[index] = e.target.value;
-    setTasks(newTasks)
-  } 
+    setTasks(newTasks);
+  };
 
- // Función para agregar un nuevo input cuando presionas "Enter"
- const handleKeyDown = (e) => {
-  if (e.key === 'Enter' && name.trim() !== '') {  // Solo si hay texto en el input
-    e.preventDefault();
-    setTasks([...tasks, name]);  // Agrega la tarea actual
-    setName('');  // Limpia el input
-  }
-};
-
+  // Función para agregar un nuevo input cuando presionas "Enter"
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && name.trim() !== "") {
+      // Solo si hay texto en el input
+      e.preventDefault();
+      setTasks([...tasks, name]); // Agrega la tarea actual
+      setName(""); // Limpia el input
+    }
+  };
 
   const addTask = () => {
-    if(name.trim() !== '') {
+    if (name.trim() !== "") {
       setTasks([...tasks, name]);
-      setName('');
+      setName("");
     }
-  }
+  };
 
   const deleteTask = (index) => {
     const newTasks = tasks.filter((_, i) => i !== index);
     setTasks(newTasks);
-  }
+  };
 
   return (
-    <div className='container'>
-      <div className='row'>
+    <div className="container">
+      <div className="row">
         <div className="col">
-      <input type='text' 
-      value={name} 
-      onChange={handleChange}
-      onKeyDown={handleKeyDown} 
-      placeholder="Escribe una tarea" 
-      className="form-control"
-      />
+          <input
+            type="text"
+            value={name}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            placeholder="Escribe una tarea"
+            className="form-control"
+          />
 
-      <button onClick={addTask} className="btn btn-primary m-2">Agregar</button>
-      
-      </div>
-      
+          <button onClick={addTask} className="btn btn-primary m-2">
+            Agregar
+          </button>
+        </div>
       </div>
       <ul>
-      {tasks.map((task, index) => (
+        {tasks.map((task, index) => (
           <li key={index}>
-            <input 
-              type="text" 
-              value={task} 
-              onChange={(e) => changeInput(e, index)} 
+            <input
+              type="text"
+              value={task}
+              onChange={(e) => changeInput(e, index)}
               className="form-control"
               placeholder="Escribe una tarea"
             />
-            <button 
-            onClick = {() => deleteTask(index)}
-            className="btn btn-danger m-2">Eliminar</button>
+            <button
+              onClick={() => deleteTask(index)}
+              className="btn btn-danger m-2"
+            >
+              Eliminar
+            </button>
           </li>
         ))}
       </ul>
-      
     </div>
   );
 };
 
-export default TodoList
+export default TodoList;
