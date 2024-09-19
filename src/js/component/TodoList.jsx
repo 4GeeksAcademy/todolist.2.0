@@ -33,8 +33,8 @@ const TodoList = () => {
   };
 
   return (
-    <div className="container d-flex flex-column align-items-center mt-5">
-      <div className="row">
+    <div className="container d-flex flex-column align-items-center mt-5 position-relative">
+      <div className="row w-100">
         <div className="col">
           <input
             type="text"
@@ -42,20 +42,21 @@ const TodoList = () => {
             onChange={handleChange}
             onKeyDown={handleKeyDown}
             placeholder="Escribe una tarea"
-            className="form-control"
+            className="form-control w-95"
           />
-
-         
         </div>
       </div>
-      <ul className="list-group">
+      <ul className="list-group w-95 mt-4">
         {tasks.map((task, index) => (
-          <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
+          <li
+            key={index}
+            className="list-group-item d-flex justify-content-between align-items-center w-100"
+          >
             <input
               type="text"
               value={task}
               onChange={(e) => changeInput(e, index)}
-              className="form-control"
+              className="form-control w-100"
               placeholder="Escribe una tarea"
             />
             <button
@@ -67,9 +68,10 @@ const TodoList = () => {
           </li>
         ))}
       </ul>
-      <div>{tasks.length}</div>
+      <footer className="task-counter bg-light text-dark w-100 p-2 text-start">
+        {tasks.length} {tasks.length === 0 ? "There are no pending tasks" : "Pending tasks"}
+      </footer>
     </div>
-    
   );
 };
 

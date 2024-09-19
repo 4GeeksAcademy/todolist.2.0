@@ -11,7 +11,7 @@ body {
 
 .container {
   width: 500px;
-  min-height: 100px;
+  min-height: 200px;
   background-color: rgb(227, 222, 222);
   box-shadow: -5px 5px #d1d9d9;
   border-radius: 5px;
@@ -31,3 +31,14 @@ button:hover {
   opacity: 1;
 }
 
+.w-95 {
+  width: 95% !important;
+}
+
+.task-count {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;   
+  font-size: 16px;
+  color: #6d6868; 
+}
