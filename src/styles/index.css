@@ -49,3 +49,7 @@ body {
 .delete-all-btn {
   opacity: 1 !important;
 }
+
+h1 {
+  color: rgb(148, 137, 137);
+}

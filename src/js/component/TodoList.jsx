@@ -38,6 +38,9 @@ const TodoList = () => {
   };
 
   return (
+    <div><h1 className=" mx-5">
+      TO DO LIST
+    </h1>
     <div className="container d-flex flex-column align-items-center mt-5 position-relative">
       <div className="row w-100 pt-2">
         <div className="col">
@@ -81,6 +84,7 @@ const TodoList = () => {
       <footer className="task-counter bg-light text-dark w-100 p-2 text-start mt-3">
         {tasks.length} {tasks.length === 0 ? "There are no pending tasks" : "Pending tasks"}
       </footer>
+    </div>
     </div>
   );
 };
