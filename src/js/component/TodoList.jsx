@@ -32,6 +32,10 @@ const TodoList = () => {
     setTasks(newTasks);
   };
 
+  const deleteAllTasks = () => {
+    setTasks([]); // Vacía todas las tareas
+  };
+
   return (
     <div className="container d-flex flex-column align-items-center mt-5 position-relative">
       <div className="row w-100">
@@ -68,7 +72,12 @@ const TodoList = () => {
           </li>
         ))}
       </ul>
-      <footer className="task-counter bg-light text-dark w-100 p-2 text-start">
+      {tasks.length > 0 && (
+        <button onClick={deleteAllTasks} className="btn btn-danger w-95 mt-3">
+          Borrar todas las tareas
+        </button>
+      )}
+      <footer className="task-counter bg-light text-dark w-100 p-2 text-start mt-3">
         {tasks.length} {tasks.length === 0 ? "There are no pending tasks" : "Pending tasks"}
       </footer>
     </div>

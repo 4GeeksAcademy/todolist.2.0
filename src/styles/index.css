@@ -23,13 +23,13 @@ body {
   align-items: center;
 }
 
-button {
+/* button {
   opacity: 0;
 }
 
 button:hover {
   opacity: 1;
-}
+} */
 
 .w-95 {
   width: 95% !important;
@@ -41,4 +41,18 @@ button:hover {
   left: 10px;   
   font-size: 16px;
   color: #6d6868; 
+}
+
+
+.list-group-item button {
+  opacity: 0;
+}
+
+.list-group-item button:hover {
+  opacity: 1;
+}
+
+
+.delete-all-btn {
+  opacity: 1 !important;
 }
