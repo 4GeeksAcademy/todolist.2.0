@@ -32,36 +32,37 @@ const TodoList = () => {
     setTasks(newTasks);
   };
 
+  //Funcion para borrar todas las tareas
   const deleteAllTasks = () => {
-    setTasks([]); // Vacía todas las tareas
+    setTasks([]); 
   };
 
   return (
     <div className="container d-flex flex-column align-items-center mt-5 position-relative">
-      <div className="row w-100">
+      <div className="row w-100 pt-2">
         <div className="col">
           <input
             type="text"
             value={name}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
-            placeholder="Escribe una tarea"
-            className="form-control w-95"
+            placeholder="Write your homework here"
+            className="form-control w-95 pt-2"
           />
         </div>
       </div>
-      <ul className="list-group w-95 mt-4">
+      <ul className="list-group w-95 pt-2 mt-4">
         {tasks.map((task, index) => (
           <li
             key={index}
-            className="list-group-item d-flex justify-content-between align-items-center w-100"
+            className="list-group-item d-flex justify-content-between align-items-center w-100 pt-2"
           >
             <input
               type="text"
               value={task}
               onChange={(e) => changeInput(e, index)}
-              className="form-control w-100"
-              placeholder="Escribe una tarea"
+              className="form-control w-100 pt-2"
+              placeholder="Write your homework"
             />
             <button
               onClick={() => deleteTask(index)}
@@ -74,7 +75,7 @@ const TodoList = () => {
       </ul>
       {tasks.length > 0 && (
         <button onClick={deleteAllTasks} className="btn btn-danger w-95 mt-3">
-          Borrar todas las tareas
+          Delete all tasks
         </button>
       )}
       <footer className="task-counter bg-light text-dark w-100 p-2 text-start mt-3">

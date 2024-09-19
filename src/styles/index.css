@@ -6,7 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
-  background-color: gray;
+  background-color: rgb(195, 189, 189);
 }
 
 .container {
@@ -23,13 +23,6 @@ body {
   align-items: center;
 }
 
-/* button {
-  opacity: 0;
-}
-
-button:hover {
-  opacity: 1;
-} */
 
 .w-95 {
   width: 95% !important;
@@ -40,7 +33,7 @@ button:hover {
   bottom: 10px;
   left: 10px;   
   font-size: 16px;
-  color: #6d6868; 
+  color: #7f7d7d; 
 }
 
 
